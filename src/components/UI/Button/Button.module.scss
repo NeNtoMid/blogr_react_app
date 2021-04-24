@@ -1,0 +1,36 @@
+@import 'styles/colors';
+
+.primaryButton,
+.secondaryButton {
+	font-weight: 700;
+	border-radius: 3rem;
+	text-align: center;
+	padding: 1.2rem;
+	transition: all 0.4s;
+}
+.primaryButton {
+	&:link,
+	&:visited,
+	&:active {
+		color: $primaryLightRed;
+		background-color: $neutralWhite;
+	}
+
+	&:hover {
+		background-color: $primaryLightRed;
+		color: $neutralWhite;
+	}
+}
+
+.secondaryButton {
+	&:link,
+	&:visited,
+	&:active {
+		color: $neutralWhite;
+		border: 1px solid $neutralWhite;
+	}
+	&:hover {
+		background-color: $neutralWhite;
+		color: $primaryLightRed;
+	}
+}

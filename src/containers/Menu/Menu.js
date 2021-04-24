@@ -4,7 +4,7 @@ import styles from './Menu.module.scss';
 
 import MenuElement from './MenuElement/MenuElement';
 
-import menuItems from './../../constans/menuItems';
+import menuItems from '../../constans/menuItems';
 const Menu = () => {
 	const [displayMenuElement, setDisplayMenuElement] = useState(null);
 
@@ -20,6 +20,7 @@ const Menu = () => {
 						elements={elements}
 						change={() => handleMenuChange(title)}
 						isDisplay={displayMenuElement === title}
+						key={title}
 					/>
 				))}
 			</div>

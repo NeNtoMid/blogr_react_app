@@ -1,4 +1,6 @@
 @import 'styles/colors';
+@import 'styles/keyframes';
+
 .wrapper {
 	background-color: $neutralWhite;
 	color: $primaryDarkBlue;
@@ -48,16 +50,5 @@
 		);
 		padding: 1.4rem 4.2rem;
 		border-radius: 3rem;
-	}
-}
-
-@keyframes slide-in-right {
-	0% {
-		transform: translate(100%, -50%);
-		opacity: 0;
-	}
-	100% {
-		transform: translate(-50%, -50%);
-		opacity: 1;
 	}
 }

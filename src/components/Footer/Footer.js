@@ -10,7 +10,7 @@ const Footer = () => {
 		<footer className={styles.footer}>
 			<h4>Blogr</h4>
 			{menuItems.map(({ title, elements }) => (
-				<FooterElement title={title} elements={elements} />
+				<FooterElement title={title} elements={elements} key={title} />
 			))}
 		</footer>
 	);

@@ -5,7 +5,6 @@
 
 	h3,
 	h4 {
-		// font-family: 'Overpass', sans-serif;
 		color: $primaryDarkBlue;
 		font-size: 3rem;
 		font-weight: 400;
@@ -56,7 +55,8 @@
 
 .phonesSection {
 	background: linear-gradient(rgba(44, 45, 63, 0.9), rgba(63, 65, 100, 0.9)),
-		url('./../../images/Content/bgPatternCircles.svg');
+		url('./../../images/Content/backgroundCircles.svg');
+
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: top;
@@ -80,6 +80,7 @@
 	h4 {
 		color: $neutralWhite;
 		padding: 2rem 0;
+		text-align: center;
 	}
 
 	p {
@@ -104,7 +105,8 @@
 }
 
 @media (min-width: 1000px) {
-	.main {
+	.main,
+	.main section div h4 {
 		text-align: left;
 	}
 

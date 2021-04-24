@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+import PropTypes from 'prop-types';
 
 import { ReactComponent as LogoSvg } from './../../images/Header/logo.svg';
 
@@ -8,57 +10,55 @@ import { ReactComponent as CloseMenuSvg } from './../../images/Header/closeMenu.
 
 import { ReactComponent as ArrowLightSvg } from './../../images/Header/arrowLight.svg';
 
-import Menu from './../Menu/Menu';
+import Menu from './../../containers/Menu/Menu';
 
 import styles from './Header.module.scss';
 
 import menuElements from './../../constans/menuItems';
 
-const Header = () => {
-	const [isDisplay, setIsDisplay] = useState(false);
+import Button from '../UI/Button/Button';
 
-	const handleMenuChange = () => {
-		setIsDisplay((prevState) => !prevState);
-	};
+const Header = ({ isDisplay, changeMenu }) => {
 	return (
 		<header className={styles.header}>
 			<nav className={styles.nav}>
-				<LogoSvg />
+				<a href='/'>
+					<LogoSvg />
+				</a>
 
 				<div className={styles.desktopMenu}>
 					<ul>
 						{menuElements.map((el) => (
-							<li>
-								<a href='/products'>
+							<li key={el.title}>
+								<a className={styles.menuElementLink} href='/products'>
 									{el.title} <ArrowLightSvg />
-									<ul>
-										{el.elements.map((link) => (
-											<li>
-												<a href={`/${link.toLocaleLowerCase()}`}>{link}</a>
-											</li>
-										))}
-									</ul>
 								</a>
+								<ul className={styles.dropdownList}>
+									{el.elements.map((link) => (
+										<li key={link}>
+											<a href={`/${link.toLocaleLowerCase()}`}>{link}</a>
+										</li>
+									))}
+								</ul>
 							</li>
 						))}
 					</ul>
 
 					<div className={styles.desktopButtons}>
-						<a href='/login'>Login</a>
-						<a href='/signup' className={styles.signupButton}>
-							Sign Up
+						<a href='/login' className={styles.loginButton}>
+							Login
 						</a>
+						<Button link='/signup' isPrimary>
+							Sign Up
+						</Button>
 					</div>
 				</div>
 				<div className={styles.mobileMenu}>
 					{!isDisplay ? (
-						<MenuSvg className={styles.menuSvg} onClick={handleMenuChange} />
+						<MenuSvg className={styles.menuSvg} onClick={changeMenu} />
 					) : (
 						<>
-							<CloseMenuSvg
-								className={styles.menuSvg}
-								onClick={handleMenuChange}
-							/>
+							<CloseMenuSvg className={styles.menuSvg} onClick={changeMenu} />
 							<Menu />
 						</>
 					)}
@@ -71,11 +71,17 @@ const Header = () => {
 			</div>
 
 			<div className={styles.buttons}>
-				<a href='/start'>Start for free</a>
-				<a href='/end'>Learn More</a>
+				<Button link='/start' isPrimary>
+					Start for free
+				</Button>
+				<Button link='/end'>Learn more</Button>
 			</div>
 		</header>
 	);
 };
 
+Header.propTypes = {
+	isDisplay: PropTypes.bool.isRequired,
+	changeMenu: PropTypes.func.isRequired,
+};
 export default Header;

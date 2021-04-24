@@ -1,4 +1,5 @@
 @import 'styles/colors';
+@import 'styles/keyframes';
 
 .header {
 	background: linear-gradient(rgba(255, 61, 84, 0.9), rgba(255, 61, 84, 0.9)),
@@ -7,7 +8,6 @@
 
 	background-size: cover;
 	background-position: left;
-	background-repeat: no-repeat;
 
 	color: $neutralWhite;
 	border-bottom-left-radius: 10rem;
@@ -44,32 +44,6 @@
 	grid-gap: 2rem;
 	grid-template-columns: repeat(2, 1fr);
 	margin: 4rem 0 15rem 0rem;
-
-	a {
-		font-weight: 700;
-		border-radius: 3rem;
-		text-align: center;
-		padding: 1.2rem;
-		transition: all 0.4s;
-		&:first-child {
-			color: $primaryLightRed;
-			background-color: $neutralWhite;
-
-			&:hover {
-				background-color: $primaryLightRed;
-				color: $neutralWhite;
-			}
-		}
-
-		&:nth-child(2) {
-			color: inherit;
-			border: 1px solid $neutralWhite;
-			&:hover {
-				background-color: $neutralWhite;
-				color: $primaryLightRed;
-			}
-		}
-	}
 }
 
 .desktopMenu {
@@ -80,27 +54,12 @@
 		display: grid;
 		grid-template-columns: repeat(3, 12rem);
 		align-items: center;
-		li a {
+
+		.menuElementLink {
 			color: $neutralWhite;
+
 			svg {
 				transition: all 0.4s;
-			}
-
-			ul {
-				display: none;
-				background-color: $neutralWhite;
-				box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-				border-radius: 0.6rem;
-				color: $gradientDarkGrayBlue;
-				line-height: 1.7;
-				padding: 3rem;
-				font-size: 1.3rem;
-				animation: scale-up-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-				position: absolute;
-
-				li a {
-					color: $neutralGrayishBlue;
-				}
 			}
 
 			&:hover {
@@ -108,12 +67,32 @@
 				svg {
 					transform: rotate(180deg);
 				}
-				ul {
-					display: block;
-					li:hover a {
-						color: black;
-					}
-				}
+			}
+		}
+
+		.dropdownList {
+			display: none;
+			background-color: $neutralWhite;
+			box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+			border-radius: 0.6rem;
+			color: $gradientDarkGrayBlue;
+			line-height: 1.7;
+			padding: 3rem;
+			font-size: 1.3rem;
+			animation: scale-up-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+			position: absolute;
+
+			li a {
+				color: $neutralGrayishBlue;
+			}
+		}
+
+		.menuElementLink:hover + ul,
+		ul:hover {
+			display: block;
+
+			li:hover a {
+				color: black;
 			}
 		}
 	}
@@ -126,30 +105,23 @@
 	justify-content: end;
 
 	a {
-		font-weight: 700;
-		border-radius: 3rem;
-		text-align: center;
 		padding: 1.4rem 2.8rem;
-		transition: all 0.4s;
+	}
 
-		border: 1px solid transparent;
-		&:first-child {
+	.loginButton {
+		&:link,
+		&:visited,
+		&:active {
 			color: $neutralWhite;
+			border-radius: 3rem;
 
-			&:hover {
-				border: 1px solid $neutralWhite;
-			}
+			transition: all 0.4s;
+
+			border: 1px solid transparent;
 		}
 
-		&:nth-child(2) {
-			background-color: $neutralWhite;
-			color: $primaryLightRed;
-
-			&:hover {
-				color: $neutralWhite;
-
-				background-color: $primaryLightRed;
-			}
+		&:hover {
+			border: 1px solid $neutralWhite;
 		}
 	}
 }
@@ -178,16 +150,5 @@
 	.buttons {
 		grid-template-columns: repeat(2, auto);
 		justify-content: center;
-	}
-}
-
-@keyframes scale-up-top {
-	0% {
-		transform: scale(0.5);
-		transform-origin: 50% 0%;
-	}
-	100% {
-		transform: scale(1);
-		transform-origin: 50% 0%;
 	}
 }

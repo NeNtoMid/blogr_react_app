@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 const FooterElement = ({ title, elements }) => {
 	return (
 		<section>
@@ -13,6 +15,11 @@ const FooterElement = ({ title, elements }) => {
 			</ul>
 		</section>
 	);
+};
+
+FooterElement.propTypes = {
+	title: PropTypes.string.isRequired,
+	elements: PropTypes.array.isRequired,
 };
 
 export default FooterElement;
