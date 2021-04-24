@@ -1,0 +1,63 @@
+@import 'styles/colors';
+.wrapper {
+	background-color: $neutralWhite;
+	color: $primaryDarkBlue;
+	grid-column: 1/ -1;
+	border-radius: 0.6rem;
+	text-align: center;
+
+	animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
+
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	width: 80%;
+
+	height: 80%;
+}
+
+.menu {
+	width: 60%;
+	margin: 0 auto;
+	border-bottom: 1px solid rgb(245, 245, 245);
+	padding: 3rem 0;
+}
+
+.buttons {
+	display: grid;
+	grid-template-columns: 1fr;
+
+	padding: 4rem 0;
+	grid-gap: 3rem;
+
+	font-size: 1.6rem;
+	font-weight: 500;
+
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0;
+	position: absolute;
+
+	.signupButton {
+		color: $neutralWhite;
+		background: linear-gradient(
+			to bottom right,
+			$gradientVeryLightRed,
+			$gradientLightRed
+		);
+		padding: 1.4rem 4.2rem;
+		border-radius: 3rem;
+	}
+}
+
+@keyframes slide-in-right {
+	0% {
+		transform: translate(100%, -50%);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(-50%, -50%);
+		opacity: 1;
+	}
+}
