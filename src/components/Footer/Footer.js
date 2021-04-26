@@ -4,7 +4,7 @@ import styles from './Footer.module.scss';
 
 import FooterElement from './FooterElement/FooterElement';
 
-import menuItems from './../../constans/menuItems';
+import menuItems from '../../constants/menuItems';
 const Footer = () => {
 	return (
 		<footer className={styles.footer}>

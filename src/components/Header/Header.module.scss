@@ -3,23 +3,14 @@
 
 .header {
 	background: linear-gradient(rgba(255, 61, 84, 0.9), rgba(255, 61, 84, 0.9)),
-		url('./../../images/Header/backgroundCircles.svg');
-	padding: 6%;
+		url('./../../assets/images/Header/backgroundCircles.svg');
+	padding: 4.5% 6%;
 
 	background-size: cover;
 	background-position: left;
 
 	color: $neutralWhite;
 	border-bottom-left-radius: 10rem;
-}
-
-.nav {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	align-items: center;
-
-	grid-row-gap: 4rem;
-	overflow: hidden;
 }
 
 .hero {
@@ -46,107 +37,7 @@
 	margin: 4rem 0 15rem 0rem;
 }
 
-.desktopMenu {
-	display: none;
-
-	ul {
-		list-style: none;
-		display: grid;
-		grid-template-columns: repeat(3, 12rem);
-		align-items: center;
-
-		.menuElementLink {
-			color: $neutralWhite;
-
-			svg {
-				transition: all 0.4s;
-			}
-
-			&:hover {
-				text-decoration: underline;
-				svg {
-					transform: rotate(180deg);
-				}
-			}
-		}
-
-		.dropdownList {
-			display: none;
-			background-color: $neutralWhite;
-			box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-			border-radius: 0.6rem;
-			color: $gradientDarkGrayBlue;
-			line-height: 1.7;
-			padding: 3rem;
-			font-size: 1.3rem;
-			animation: scale-up-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-			position: absolute;
-
-			li a {
-				color: $neutralGrayishBlue;
-			}
-		}
-
-		.menuElementLink:hover + ul,
-		ul:hover {
-			display: block;
-
-			li:hover a {
-				color: black;
-			}
-		}
-	}
-}
-
-.desktopButtons {
-	display: grid;
-	grid-gap: 2rem;
-	grid-template-columns: repeat(2, auto auto);
-	justify-content: end;
-
-	a {
-		padding: 1.4rem 2.8rem;
-	}
-
-	.loginButton {
-		&:link,
-		&:visited,
-		&:active {
-			color: $neutralWhite;
-			border-radius: 3rem;
-
-			transition: all 0.4s;
-
-			border: 1px solid transparent;
-		}
-
-		&:hover {
-			border: 1px solid $neutralWhite;
-		}
-	}
-}
-
-.mobileMenu {
-	display: block;
-	justify-self: end;
-}
-
 @media (min-width: 1000px) {
-	.desktopMenu {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	.mobileMenu {
-		display: none;
-	}
-
-	.nav {
-		grid-template-columns: auto 1fr;
-
-		grid-gap: 6rem;
-	}
-
 	.buttons {
 		grid-template-columns: repeat(2, auto);
 		justify-content: center;

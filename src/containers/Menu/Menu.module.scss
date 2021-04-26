@@ -8,15 +8,21 @@
 	border-radius: 0.6rem;
 	text-align: center;
 
+	z-index: 100;
+
 	animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
 
 	position: absolute;
 	transform: translate(-50%, -50%);
-	top: 50%;
+	top: 55%;
 	left: 50%;
 	width: 80%;
+	height: 85%;
+}
 
-	height: 80%;
+.container {
+	position: relative;
+	height: 100%;
 }
 
 .menu {
@@ -41,7 +47,8 @@
 	bottom: 0;
 	position: absolute;
 
-	.signupButton {
+	.activeSignupButton,
+	.activeLoginButton {
 		color: $neutralWhite;
 		background: linear-gradient(
 			to bottom right,

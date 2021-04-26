@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 
 import styles from './MenuElement.module.scss';
 
-import { ReactComponent as ArrowDarkSvg } from './../../../images/MenuElement/arrowDark.svg';
+import { ReactComponent as ArrowDarkSvg } from './../../../assets/images/MenuElement/arrowDark.svg';
+
+import { Link } from 'react-router-dom';
 
 const MenuElement = ({ title, elements, isDisplay, change }) => {
 	return (
@@ -18,7 +20,7 @@ const MenuElement = ({ title, elements, isDisplay, change }) => {
 				<ul>
 					{elements.map((el) => (
 						<li key={el}>
-							<a href={`/${el.toLowerCase()}`}>{el}</a>
+							<Link to={`/${el.toLowerCase()}`}>{el}</Link>
 						</li>
 					))}
 				</ul>

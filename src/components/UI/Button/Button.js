@@ -4,14 +4,17 @@ import PropTypes from 'prop-types';
 
 import styles from './Button.module.scss';
 
+import { NavLink } from 'react-router-dom';
+
 const Button = ({ link, isPrimary, children }) => {
 	return (
-		<a
+		<NavLink
 			className={isPrimary ? styles.primaryButton : styles.secondaryButton}
-			href={link}
+			activeClassName={styles.primaryButton}
+			to={link}
 		>
 			{children}
-		</a>
+		</NavLink>
 	);
 };
 

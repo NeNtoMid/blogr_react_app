@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import styles from './Home.module.scss';
 
@@ -8,12 +8,10 @@ import Content from '../../components/Content/Content';
 
 import Footer from '../../components/Footer/Footer';
 
-const Home = () => {
-	const [isDisplay, setIsDisplay] = useState(false);
+import useMenu from './../../hooks/useMenu';
 
-	const handleMenuChange = () => {
-		setIsDisplay((prevState) => !prevState);
-	};
+const Home = () => {
+	const { isDisplay, handleMenuChange } = useMenu();
 
 	const render = useMemo(
 		() => (

@@ -1,0 +1,28 @@
+@import 'styles/colors';
+
+.main {
+	padding: 6%;
+
+	form {
+		display: grid;
+		grid-template-columns: 1fr;
+		place-items: center;
+		grid-gap: 4rem;
+		.submitButton {
+			font-weight: 700;
+			border-radius: 3rem;
+			text-align: center;
+			padding: 1.5rem 3rem;
+			transition: all 0.4s;
+			background-color: $primaryLightRed;
+			color: $neutralWhite;
+			border: 1px solid transparent;
+			cursor: pointer;
+			&:hover {
+				color: $primaryLightRed;
+				background-color: $neutralWhite;
+				border: 1px solid $primaryLightRed;
+			}
+		}
+	}
+}

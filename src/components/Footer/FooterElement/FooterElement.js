@@ -2,6 +2,8 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
+
 const FooterElement = ({ title, elements }) => {
 	return (
 		<section>
@@ -9,7 +11,7 @@ const FooterElement = ({ title, elements }) => {
 			<ul>
 				{elements.map((el) => (
 					<li key={el}>
-						<a href={`/${el.toLowerCase()}`}>{el}</a>
+						<Link to={`/${el.toLowerCase()}`}>{el}</Link>
 					</li>
 				))}
 			</ul>

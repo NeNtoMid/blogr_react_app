@@ -4,15 +4,15 @@ import styles from './Content.module.scss';
 
 import { isMobile } from 'mobile-device-detect';
 
-import editorDesktopSvg from './../../images/Content/illustrationEditorDesktop.svg';
+import editorDesktopSvg from './../../assets/images/Content/illustrationEditorDesktop.svg';
 
-import editorMobileSvg from './../../images/Content/illustrationEditorMobile.svg';
+import editorMobileSvg from './../../assets/images/Content/illustrationEditorMobile.svg';
 
-import laptopDesktopSvg from './../../images/Content/illustrationLaptopDesktop.svg';
+import laptopDesktopSvg from './../../assets/images/Content/illustrationLaptopDesktop.svg';
 
-import laptopMobileSvg from './../../images/Content/illustrationLaptopMobile.svg';
+import laptopMobileSvg from './../../assets/images/Content/illustrationLaptopMobile.svg';
 
-import phonesSvg from './../../images/Content/illustrationPhones.svg';
+import phonesSvg from './../../assets/images/Content/illustrationPhones.svg';
 
 import ContentText from './ContentText/ContentText';
 

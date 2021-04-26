@@ -1,0 +1,34 @@
+@import 'styles/colors';
+
+.container {
+	display: grid;
+	place-items: center;
+
+	input {
+		font-weight: 700;
+		border-radius: 3rem;
+		text-align: center;
+		padding: 1.2rem;
+		transition: all 0.4s;
+		color: $primaryLightRed;
+
+		outline: none;
+		border: 1px solid $primaryRed;
+
+		&:hover {
+			background-color: darken($neutralWhite, 1);
+		}
+		&.error {
+			border: 1px solid red;
+			background-color: #f7f6f6;
+			color: red;
+		}
+	}
+
+	p {
+		color: red;
+		text-align: center;
+		padding: 2rem 0;
+		font-size: 1.2rem;
+	}
+}
